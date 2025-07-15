@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0; /*Padding é o espaço dentro da caixa e o seu conteúdo*/
+    box-sizing: border-box; /*Faz com que o tamanho seja o indicado e já icluindo propriedades como o padding, onde sem ele, a caixa iria de 100 para 110 após incluir 10px de padding, por exemplo*/
+}
+
+body{
+    background-image: url('./img/bg.png');
+    background-size:cover; /*Faz com que a imagem de fundo cubra todo o espaço disponível*/
+    width: 100vw; /*vw é a unidade de medida que representa 1% da largura da viewport, vw para width*/
+    height: 100vh; /*vh é a unidade de medida que representa 1% da altura da viewport, vh para height*/
+    font-family: 'Open Sans', sans-serif; 
+    }
+
+
+main{
+    display: flex;
+    flex-direction: column; /*Flex-direction define a direção dos itens dentro do container flex, neste caso, para a coluna*/
+}
+
+
+.title{
+    color:rgb(101, 14, 241);
+    margin: 20vh auto; /*Auto centraliza horizontalmente o elemento*/
+    font-size: 7vw;
+    text-shadow: 0 0 10px wheat;
+}
+
+.container{
+        width: 100vw;
+        height: 100px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        justify-content: space-around;
+        gap: 15px;
+}
+
+.key{
+    display: flex;
+    width: 100px;
+    height: 100px;
+    align-items: center; /*Alinha os itens dentro do container flex verticalmente no centro*/
+    justify-content: center; /*Alinha os itens dentro do container flex horizontalmente no centro*/
+    background-color: #000000BB;
+    border: 3px solid white;
+    color: white;
+    font-size: calc(5vw + 20px); /*Calcula o tamanho da fonte com base no especificado*/
+}
