@@ -27,14 +27,14 @@ main{
 }
 
 .container{
-        width: 100vw;
+        width: 85vw;
         height: 100px;
         margin: 0 auto;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         justify-content: space-around;
-        gap: 1px;
+        gap: 15px;
 }
 
 .key{
@@ -46,7 +46,14 @@ main{
     background-color: #000000BB;
     border: 3px solid white;
     color: white;
-    font-size: calc(5vw + 20px); /*Calcula o tamanho da fonte com base no especificado*/
+    font-size: calc(3vw + 20px); /*Calcula o tamanho da fonte com base no especificado*/
     user-select: none; /*Faz o usuário não conseguir selecionar o texto*/
     cursor:pointer; /*Muda o cursor para uma mãozinha quando passa por cima do elemento*/
+    transition: transform .2s;
+}
+
+.active{ /*Quando o mouse clica no elemento*/
+    transform:scale(1.3); /*Aumenta o tamanho do elemento em 30%*/
+    border-color: rgb(101, 14, 241);
+    box-shadow: 0 0 50px rgb(101, 14, 241);
 }

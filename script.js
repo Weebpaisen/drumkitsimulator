@@ -29,11 +29,29 @@ let tocarsom = (letra) => {
     audio.play();
     }
 
+let adicionarefeito = (letra) => {
+    document.getElementById(letra).classList.add('active'); //Adiciona a classe active ao elemento com o id correspondente à letra
+    }
+
+let removerefeito = (letra) => {
+    let div = document.getElementById(letra)
+    let removeActive = () => div.classList.remove('active'); //Remove a classe active do elemento com id correspondente à letra
+    div.addEventListener('transitionend',removeActive);
+    }
+    
 let ativardiv = (evento) => {
-    let letra = evento.target.id; //Pega o id do elemento clicado, que seria uma das letras do drumkit
-    tocarsom(letra);
+    const letra = evento.type == 'click' ? evento.target.id : evento.key.toUpperCase();
+    let letrapermitida = sons.hasOwnProperty(letra); //Verifica se a letra existe no objeto sons ao ser clicado e ser alvo da ação acima, para caso não clique nas letras, não haja erros
+    if (letrapermitida) {
+        adicionarefeito(letra)
+        tocarsom(letra);
+        removerefeito(letra);
+    }
+    
 }
 
 exibir(sons); 
 
 document.getElementById('container').addEventListener('click', ativardiv);
+
+window.addEventListener('keydown',ativardiv);
