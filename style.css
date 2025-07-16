@@ -34,7 +34,7 @@ main{
         flex-wrap: wrap;
         justify-content: center;
         justify-content: space-around;
-        gap: 15px;
+        gap: 1px;
 }
 
 .key{
@@ -47,4 +47,6 @@ main{
     border: 3px solid white;
     color: white;
     font-size: calc(5vw + 20px); /*Calcula o tamanho da fonte com base no especificado*/
+    user-select: none; /*Faz o usuário não conseguir selecionar o texto*/
+    cursor:pointer; /*Muda o cursor para uma mãozinha quando passa por cima do elemento*/
 }
